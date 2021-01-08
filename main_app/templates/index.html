@@ -11,6 +11,10 @@
   <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
 </head>
 <body>
-    <h1>Wacky Widgets</h1>
+  <h1>Wacky Widgets</h1>
+  {% if widget_list|length == 0 %}
+    <h3>No Widgets Exist</h3>
+  {% endif %}
+  <hr>
 </body>
 </html>
