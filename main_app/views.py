@@ -5,7 +5,10 @@ from .forms import WidgetForm
 def index(request):
   widget_list = Widget.objects.all()
   widget_form = WidgetForm()
-  return render(request, 'index.html', {'widget_list': widget_list, 'widget_form': widget_form})
+  total = 0
+  for widget in widget_list:
+    total += widget.quantity 
+  return render(request, 'index.html', {'widget_list': widget_list, 'widget_form': widget_form, 'total': total})
 
 def add_widget(request):
   form = WidgetForm(request.POST)
