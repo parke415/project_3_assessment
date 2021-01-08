@@ -16,5 +16,11 @@
     <h3>No Widgets Exist</h3>
   {% endif %}
   <hr>
+  <h4>Add Widget</h4>
+  <form class="pure-form" action="{% url 'add_widget' %}" method="POST">
+    {% csrf_token %}
+    <label>{{ widget_form.as_p }}</label>
+    <input type="submit" value="ADD WIDGET" class="pure-button">
+  </form>
 </body>
 </html>
